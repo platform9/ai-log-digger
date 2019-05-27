@@ -10,5 +10,5 @@ def analyze(str):
     print si
     return si['compound']
 
-print 'Text: ' + sys.argv[1]
-print 'Sentiment: ' + str(analyze(sys.argv[1]))
+#print 'Text: ' + sys.argv[1]
+#print 'Sentiment: ' + str(analyze(sys.argv[1]))
