@@ -1,7 +1,24 @@
-It is located at a central place in the city.
-The place was being renovated when I visited so the seating was limited.
-The food is delicious but not over the top.
-Service - Little slow, probably because too many people.
-The place is not easy to locate.
-Mushroom fried rice was tasty.
-A great location to hangout.
+
+Cluster 2800b336-8379-40e4-8485-c3fb50c589b5 created.
+Node be840440-16c1-44f5-8a3b-c2ba10b68141 added.
+Node be840440-16c1-44f5-8a3b-c2ba10b68141 became master.
+Node dc4396de-51eb-4540-8614-a9e96b208e8f added.
+Node dc4396de-51eb-4540-8614-a9e96b208e8f became worker.
+Accepting request from 10.0.4.5.
+Sending response.
+Accepting request from 10.0.4.3.
+Sending response.
+Accepting request from 10.0.4.5.
+Sending response.
+Accepting request from 10.0.4.3.
+Sending response.
+Accepting request from 10.0.4.5.
+Sending response.
+Master be840440-16c1-44f5-8a3b-c2ba10b68141 disconnected.
+Trying to reconnect.
+Accepting request from 10.0.4.3.
+Sending response.
+Accepting request from 10.0.4.5.
+Sending response.
+Accepting request from 10.0.4.3.
+Sending response.

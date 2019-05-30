@@ -1,5 +1,26 @@
-Great place to be when you are in Bangalore.
-The food is delicious but not over the top.
-Service - Little slow, probably because too many people.
-The place is not easy to locate.
-The place had a lot of mosquitos.
+
+Cluster 11537bab-50b7-46e0-af2b-ecff900348cf created.
+Node a89e99cb-32dd-4bcf-a199-70ed811570a0 added.
+Node a89e99cb-32dd-4bcf-a199-70ed811570a0 became master.
+Node f93c6cfb-63e2-488e-873e-cf544d59c8d4 added.
+Node f93c6cfb-63e2-488e-873e-cf544d59c8d4 became worker.
+Accepting request from 10.0.4.5.
+Sending response.
+Accepting request from 10.0.4.3.
+Sending response.
+Accepting request from 10.0.4.5.
+Sending response.
+Accepting request from 10.0.4.3.
+Sending response.
+Accepting request from 10.0.4.5.
+Sending response.
+Master a89e99cb-32dd-4bcf-a199-70ed811570a0 disconnected.
+Trying to reconnect.
+Master a89e99cb-32dd-4bcf-a199-70ed811570a0 disconnected.
+Trying to reconnect.
+Accepting request from 10.0.4.3.
+Sending response.
+Accepting request from 10.0.4.5.
+Sending response.
+Accepting request from 10.0.4.3.
+Sending response.
