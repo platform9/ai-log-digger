@@ -1,6 +1,5 @@
-# daaas
 AI Log Digger
-(A Hackathon 11 Project)
+(a Hackathon 11 project)
 
 Steps to demo:
 1. Install necessary libraries (`pip install sklearn, pandas`)
