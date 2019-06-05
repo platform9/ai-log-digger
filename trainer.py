@@ -3,40 +3,28 @@ import sys
 import os
 import io
 
+from processor import process_line
 from pandas import DataFrame
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.feature_extraction.text import CountVectorizer
 import cPickle
 
-def readFiles1(path):
-    for root, dirnames, filenames in os.walk(path):
-        for filename in filenames:
-            path = os.path.join(root, filename)
-
-            inBody = False
-            lines = []
-            f = io.open(path, 'r', encoding='latin1')
-            for line in f:
-                if inBody:
-                    lines.append(line)
-                elif line == '\n':
-                    inBody = True
-            f.close()
-            message = '\n'.join(lines)
-            yield path, message
 
 def readFiles(path):
-    for root, dirnames, filenames in os.walk(path):
-        for filename in filenames:
-            path = os.path.join(root, filename)
-
-            lines = []
-            f = io.open(path, 'r', encoding='latin1')
-            for line in f:
-                lines.append(line)
-            f.close()
-            message = ''.join(lines)
-            yield path, message
+    for root, clusnames, filenames in os.walk(path):
+        for clusname in clusnames:
+            path = os.path.join(root, clusname)
+            for clusroot, dirnames, logfiles in os.walk(path):
+                for logfile in logfiles:
+                    logpath = os.path.join(path, logfile)
+                    print 'Learning log file: ' + logpath
+                    lines = []
+                    f = io.open(logpath, 'r', encoding='latin1')
+                    for line in f:
+                        lines.append(process_line(line))
+                    f.close()
+                    message = ''.join(lines)
+                    yield logpath, message
 
 def dataFrameFromDirectory(path, classification):
     rows = []
@@ -58,22 +46,15 @@ print data
 
 vectorizer = CountVectorizer()
 voc = vectorizer.fit(data['message'].values)
-#print vars(voc)
 cPickle.dump(voc.vocabulary_, open('voc.sav', 'wb'))
 counts = vectorizer.transform(data['message'].values)
+feature_names = vectorizer.get_feature_names()
+print 'Total feature names: ' + str(len(feature_names))
 
 classifier = MultinomialNB()
 targets = data['class'].values
 classifier.fit(counts, targets)
 cPickle.dump(classifier, open('model.sav', 'wb'))
-
-examples = ['Master d3538f42-6b9d-4650-9f4f-f80f518b6a38 disconnected.', 'node, abc', 'Node d91f5623-3521-4ac9-8dfd-b6dbba07c7aa became worker']
-example_counts = vectorizer.transform(examples)
-predictions = classifier.predict_proba(example_counts)
-
-print predictions
-#sco = classifier.score(example_counts, targets)
-#print sco
 
 if len(sys.argv) > 3:
     to_predict = sys.argv[3]
